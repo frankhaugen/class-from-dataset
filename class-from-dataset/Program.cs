@@ -25,6 +25,9 @@ namespace class_from_dataset
             File.WriteAllLines(outputPath, CreateClass(GetHeaders(headers)));
             
             GetDataSamples();
+
+            Console.WriteLine(EvaluateVariableType.Evaluate(dataSamples[2].Split(',').ToArray()[9]));
+
             Console.ReadKey();
         }
 
@@ -46,7 +49,7 @@ namespace class_from_dataset
 
             string classline = "class ";
             string bracesStart = "{";
-            string type = "\tpublic string ";
+            //string type = "\t" +  + " string ";
             string getset = " { get; set; }";
             string breacesEnd = "}";
 
@@ -56,7 +59,7 @@ namespace class_from_dataset
             output.Add(bracesStart);
             foreach (string item in headers)
             {
-                string str = type + UppercaseFirst(CheckIfLegal(item)) + getset;
+                string str = "\tpublic " + "string" + " " + UppercaseFirst(CheckIfLegal(item)) + getset;
 
                 Console.WriteLine(str);
                 output.Add(str);
