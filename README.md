@@ -1,6 +1,9 @@
 ## class-from-dataset
-A simple tool to use a dataset, (e.g. CSV), to generate a .class file for use with the data. The idea is that sometimes you have data that has so many columns that it takes way to long to create it manually
+A simple tool to use a dataset, (e.g. CSV), to generate a .class file with properties based on the header.
 
+The idea is that sometimes you have data with so many columns that it takes way to long to create it manually.
+
+This tool creates the class and a starting point of properties, so the programmer can start working with the data imediatly  
 ### Basic functionality
 Feed tha program with a dataset it recognizes with headers and some data, (min. 5 lines of data), and it will create a class after doing a "best guess" for which datatype it should use for the diffrent columns, (if it's less than 60% certain, it will deem it a string by default)
 
