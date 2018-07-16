@@ -13,9 +13,7 @@ namespace class_from_dataset
         public static string Evaluate(string input)
         {
             string output = "string";
-
-            //output = input.GetType();
-
+            
             if (decimal.TryParse(input, out var result)) { output = "decimal"; }
             if (DateTime.TryParse(input, out var result1)) { output = "DateTime"; }
             if (int.TryParse(input, out var result2)) { output = "int"; }

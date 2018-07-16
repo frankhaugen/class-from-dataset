@@ -17,18 +17,33 @@ namespace class_from_dataset
         public static List<string> inputData = File.ReadLines(testDataPath).ToList();
         public static List<string> dataSamples;
         public static string headers = inputData.ElementAt(0);
+        public static string values = inputData.ElementAt(1);
+
+        public static Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
 
 
         static void Main(string[] args)
         {
             if (File.Exists(outputPath)) { File.Delete(outputPath); }
-            File.WriteAllLines(outputPath, CreateClass(GetHeaders(headers)));
             
             GetDataSamples();
+            GenerateDictionary();
+            File.WriteAllLines(outputPath, CreateClass(GetHeaders(headers)));
 
-            Console.WriteLine(EvaluateVariableType.Evaluate(dataSamples[2].Split(',').ToArray()[9]));
+
 
             Console.ReadKey();
+        }
+
+        static void GenerateDictionary()
+        {
+            string[] headersArray = headers.Split(',');
+            string[] valuesArray = values.Split(',');
+
+            for (int i = 0; i < headersArray.Length; i++)
+            {
+                keyValuePairs.Add(headersArray[i], EvaluateVariableType.Evaluate(valuesArray[i]));
+            }
         }
 
         static void GetDataSamples()
@@ -43,6 +58,11 @@ namespace class_from_dataset
             return output;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="headers"></param>
+        /// <returns></returns>
         static List<string> CreateClass(List<string> headers)
         {
             List<string> output = new List<string>();
@@ -57,13 +77,22 @@ namespace class_from_dataset
             output.Add(classline);
             Console.WriteLine(bracesStart);
             output.Add(bracesStart);
-            foreach (string item in headers)
+
+            foreach (KeyValuePair<string, string> item in keyValuePairs)
             {
-                string str = "\tpublic " + "string" + " " + UppercaseFirst(CheckIfLegal(item)) + getset;
+                string str = "\tpublic " + item.Value + " " + UppercaseFirst(CheckIfLegal(item.Key)) + getset;
 
                 Console.WriteLine(str);
                 output.Add(str);
             }
+
+            //foreach (string item in headers)
+            //{
+            //    string str = "\tpublic " + "string" + " " + UppercaseFirst(CheckIfLegal(item)) + getset;
+
+            //    Console.WriteLine(str);
+            //    output.Add(str);
+            //}
             Console.WriteLine(breacesEnd);
             output.Add(breacesEnd);
 
