@@ -8,6 +8,10 @@ This tool creates the class and a starting point of properties, so the programme
 Feed tha program with a dataset it recognizes with headers and some data, (min. 5 lines of data), and it will create a class after doing a "best guess" for which datatype it should use for the diffrent columns, (if it's less than 60% certain, it will deem it a string by default)
 
 It also checks the method names for "illigal words", (like "var"), and uppercases the first letter
+
+### Usage
+It uses the csv -file "input.csv", which must have headers and at least 5 lines of data, and creates a class with properies in the "output.txt"-file, (se below for example output)
+
 ### Testing Dataset
 While testing, this program uses an astronomical dataset, because it has coloumns of varying types of data.
 
@@ -19,8 +23,8 @@ While testing, this program uses an astronomical dataset, because it has coloumn
 class 
 {
 	public int Id { get; set; }
-	public string Hip { get; set; }
-	public string Hd { get; set; }
+	public int Hip { get; set; }
+	public int Hd { get; set; }
 	public string Hr { get; set; }
 	public string Gl { get; set; }
 	public string Bf { get; set; }
@@ -32,7 +36,7 @@ class
 	public decimal Pmdec { get; set; }
 	public decimal Rv { get; set; }
 	public decimal Mag { get; set; }
-	public DateTime Absmag { get; set; }
+	public decimal Absmag { get; set; }
 	public string Spect { get; set; }
 	public decimal Ci { get; set; }
 	public decimal X { get; set; }
@@ -41,17 +45,17 @@ class
 	public decimal Vx { get; set; }
 	public decimal Vy { get; set; }
 	public decimal Vz { get; set; }
-	public int Rarad { get; set; }
-	public int Decrad { get; set; }
-	public int Pmrarad { get; set; }
-	public int Pmdecrad { get; set; }
+	public decimal Rarad { get; set; }
+	public decimal Decrad { get; set; }
+	public decimal Pmrarad { get; set; }
+	public decimal Pmdecrad { get; set; }
 	public string Bayer { get; set; }
 	public string Flam { get; set; }
 	public string Con { get; set; }
 	public int Comp { get; set; }
 	public int Comp_primary { get; set; }
 	public string Base_ { get; set; }
-	public int Lum { get; set; }
+	public decimal Lum { get; set; }
 	public string Var_ { get; set; }
 	public string Var_min { get; set; }
 	public string Var_max { get; set; }
