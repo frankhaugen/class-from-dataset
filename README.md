@@ -18,43 +18,42 @@ While testing, this program uses an astronomical dataset, because it has coloumn
 ```csharp
 class 
 {
-	public string Id { get; set; }
+	public int Id { get; set; }
 	public string Hip { get; set; }
 	public string Hd { get; set; }
 	public string Hr { get; set; }
 	public string Gl { get; set; }
 	public string Bf { get; set; }
 	public string Proper { get; set; }
-	public string Ra { get; set; }
-	public string Dec { get; set; }
-	public string Dist { get; set; }
-	public string Pmra { get; set; }
-	public string Pmdec { get; set; }
-	public string Rv { get; set; }
-	public string Mag { get; set; }
-	public string Absmag { get; set; }
+	public decimal Ra { get; set; }
+	public decimal Dec { get; set; }
+	public decimal Dist { get; set; }
+	public decimal Pmra { get; set; }
+	public decimal Pmdec { get; set; }
+	public decimal Rv { get; set; }
+	public decimal Mag { get; set; }
+	public DateTime Absmag { get; set; }
 	public string Spect { get; set; }
-	public string Ci { get; set; }
-	public string X { get; set; }
-	public string Y { get; set; }
-	public string Z { get; set; }
-	public string Vx { get; set; }
-	public string Vy { get; set; }
-	public string Vz { get; set; }
-	public string Rarad { get; set; }
-	public string Decrad { get; set; }
-	public string Pmrarad { get; set; }
-	public string Pmdecrad { get; set; }
+	public decimal Ci { get; set; }
+	public decimal X { get; set; }
+	public decimal Y { get; set; }
+	public decimal Z { get; set; }
+	public decimal Vx { get; set; }
+	public decimal Vy { get; set; }
+	public decimal Vz { get; set; }
+	public int Rarad { get; set; }
+	public int Decrad { get; set; }
+	public int Pmrarad { get; set; }
+	public int Pmdecrad { get; set; }
 	public string Bayer { get; set; }
 	public string Flam { get; set; }
 	public string Con { get; set; }
-	public string Comp { get; set; }
-	public string Comp_primary { get; set; }
+	public int Comp { get; set; }
+	public int Comp_primary { get; set; }
 	public string Base_ { get; set; }
-	public string Lum { get; set; }
+	public int Lum { get; set; }
 	public string Var_ { get; set; }
 	public string Var_min { get; set; }
 	public string Var_max { get; set; }
 }
-
 ```
