@@ -24,8 +24,7 @@ namespace class_from_dataset
         {
             if (File.Exists(outputPath)) { File.Delete(outputPath); }
             inputData = CollectInputData();
-
-
+            
             GenerateDataTable();
             File.WriteAllLines(outputPath, CreateClass());
 
